@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Navigating in Directories | Learning Journey</title>
+<meta property="og:title" content="Navigating in Directories | Learning Journey" />
+<meta name="twitter:title" content="Navigating in Directories | Learning Journey" />
+<meta itemprop="name" content="Navigating in Directories | Learning Journey" />
+<meta name="application-name" content="Navigating in Directories | Learning Journey" />
+<meta property="og:site_name" content="Learning Journey" />
+
+<meta name="description" content="about git and basic terminal commands for navigating the directories and files">
+<meta itemprop="description" content="about git and basic terminal commands for navigating the directories and files" />
+<meta property="og:description" content="about git and basic terminal commands for navigating the directories and files" />
+<meta name="twitter:description" content="about git and basic terminal commands for navigating the directories and files" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="//localhost:1313/linux-terminal/1navigation/" title="English" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.136.2">
+
+    
+    <meta property="og:url" content="//localhost:1313/linux-terminal/1navigation/">
+  <meta property="og:site_name" content="Learning Journey">
+  <meta property="og:title" content="Navigating in Directories">
+  <meta property="og:description" content="about git and basic terminal commands for navigating the directories and files">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="linux-terminal">
+    <meta property="article:published_time" content="2024-10-20T18:09:18+05:30">
+    <meta property="article:modified_time" content="2024-10-20T18:09:18+05:30">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Navigating in Directories">
+  <meta name="twitter:description" content="about git and basic terminal commands for navigating the directories and files">
+
+
+    
+
+    <link rel="canonical" href="//localhost:1313/linux-terminal/1navigation/">
+    <link href="/style.min.b446474b7e5d77c595232b5fd48158f6a57c1757ae7f6a8c3417d096cacfa89e.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="//localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="//localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Navigating in Directories</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-10-20T18:09:18&#43;05:30" itemprop="datePublished"> 20 Oct 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+        
+            
+        
+    
+    <details class="toc" open>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bash">Bash</a></li>
+    <li><a href="#terminal-basics">Terminal Basics</a></li>
+    <li><a href="#general-syntax-of-a-shell-command">General Syntax of a Shell command</a></li>
+    <li><a href="#navigating-files-and-directories">Navigating Files and Directories</a>
+      <ul>
+        <li><a href="#tab-completion">Tab completion</a></li>
+        <li><a href="#print-working-directory---pwd">Print Working Directory   <code>pwd</code></a></li>
+        <li><a href="#relative-and-absolute-paths">Relative and Absolute Paths</a></li>
+        <li><a href="#change-directory-cd----cd---change-directory">Change directory <code>cd</code>    [[cd - change directory]]</a></li>
+        <li><a href="#listing-ls--ls---list">Listing <code>ls</code>  [[ls - list]]</a>
+          <ul>
+            <li><a href="#looking-at-other-directories-contents-without-moving-out">Looking at other directories contents without moving out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="bash">Bash</h2>
+<p>Bash - <code>Bourne Again SHell</code>    (git Bash - for windows interaction with git )</p>
+<p><code>Ctrl + Alt + T</code>    Launch terminal
+<code>Ctrl + Shift + C</code>    for copying from terminal
+<code>Ctrl + Shift + V</code>   for pasting in terminal
+<code>clear</code>      to clear the terminal</p>
+<p>The grammar of a shell allows to combine existing tools into powerful pipelines and handle large volumes of data automatically.
+Sequence of commands written in a &lsquo;script&rsquo;, improves the reproduciblity of workflows.</p>
+<h2 id="terminal-basics">Terminal Basics</h2>
+<p>#30aug24
+<code>su</code>  -  super user
+<code>sudo</code>  -   getting the super user permission
+<code>apt </code>  -  the installer  <br>
+<code>sudo apt install update</code>   <code> sudo apt upgrade</code></p>
+<p><code>$</code>  is the prompt for typing, followed by a blinking text cursor
+<code>$ whoami</code>     <code> sujith</code></p>
+<p><code>--help</code> can be passed to any command  to see what option a command accepts
+<code>cd --help</code>           <code>ls --help</code>           <code>mkdir --help</code></p>
+<p><code>help cd</code>   <code>help echo</code>  works
+(if there are long <code>--</code> and short <code>-</code> versions of a command, use short when typing command in the terminal, use long in scripts when it is written once and read many times)</p>
+<p><code>man</code> is manual for a command if it exists
+<code>man ls</code>       <code>man mkdir</code></p>
+<p><code>space</code> and <code>B</code> used to travel in manual,<br>
+<code>/</code> is used to search for a term,<br>
+<code>N</code> is used to move between the hits, <code>N+Shift</code> for moving backwards</p>
+<p><code>man cd</code> doesn&rsquo;t exist as it is a built is function <code>--help</code> can be used</p>
+<h2 id="general-syntax-of-a-shell-command">General Syntax of a Shell command</h2>
+<p><code>$ ls -F /</code>   Listing of files &amp; directories in Root directory /
+$ is the prompt
+ls is the command
+-F is the option/flag/switches
+/ is the argument</p>
+<p>&lsquo;Command&rsquo; doesn&rsquo;t always require argument or option
+&lsquo;Command&rsquo; can be called with more than one &lsquo;options&rsquo; &amp; &lsquo;arguments&rsquo;
+( &lsquo;options&rsquo; and &lsquo;arguments&rsquo; are referred to as &lsquo;parameters&rsquo;)</p>
+<p>&lsquo;Options&rsquo; change the behavior of a &lsquo;command&rsquo;
+&lsquo;short options&rsquo; start with single dash &rsquo; - &lsquo;,   <code>-r</code>   <code>-a</code>
+&rsquo;long options&rsquo; start with double dash &lsquo;&ndash;&rsquo;   <code>--reverse</code>    <code>--all</code></p>
+<p>&lsquo;Arguments&rsquo; tell the command what to operate on (files and directories)</p>
+<blockquote>
+<p>Each parts are separated by spaces, if space is omitted, the difference between command, option and argument will not be known to the terminal.<br>
+(  <code>ls-F</code>   searches for a command called <code>ls-F</code>  which doesn&rsquo;t exist)</p>
+</blockquote>
+<p>Capital and Small are also important
+<code>ls -s</code>   displays size of listed files
+<code>ls -S</code>  sorts the displayed files</p>
+<hr>
+<h2 id="navigating-files-and-directories">Navigating Files and Directories</h2>
+<p><code>Directory names in a path are separated by / in unix, \ in windows</code></p>
+<h3 id="tab-completion">Tab completion</h3>
+<p>When there is only one option, like Document or Download, hitting tab on D will show both Document/ Download. (Double tab will show if there are more than one)
+Doc + Tab will bring <strong>Documents</strong></p>
+<p><code>~/Documents/Odin-Project/foundations/java-script/calculator/</code>
+Doc tab      O tab     f tab     j tab    cal  tab</p>
+<ul>
+<li><code>.</code>  for opening everything in a project directory</li>
+<li><code>git add .</code>  to add all files in a directory to Git staging area</li>
+<li>In VS code, opening <code>cd</code> in project directory and typing   <code>code .</code>    opens project folder</li>
+<li><code>code</code> in terminal launches VS code</li>
+</ul>
+<h3 id="print-working-directory---pwd">Print Working Directory   <code>pwd</code></h3>
+<p><code>pwd</code>  print working directory, shows current working directory(shows where we are)
+[[pwd  - print working dir]]
+<code>/</code> indicates the root directory,  <code>/Users/sujith</code>  it is the slash before the user</p>
+<h3 id="relative-and-absolute-paths">Relative and Absolute Paths</h3>
+<p>When &lsquo;<em><strong>Relative paths</strong></em>&rsquo; are used with commands <code>ls</code> and <code>cd</code>, it tries to find that location &lsquo;from where we are&rsquo; rather than from the root of the file system. so it can only look at files within that directory and the <code>..</code> parent directory</p>
+<p><em><strong>Absolute paths</strong></em> can be specified by including its entire entire path from the root directory indicated by a leading slash  <code>/</code>
+This tells the computer to follow the path from the root of file system so it always refers to one directory.</p>
+<p>(Using <code>pwd</code> to see the route and typing the absolute path to wherever we want to go)
+<code>~</code>  tilde character at the start of a path mean <strong>the current users home directory</strong><br>
+( <code>~/data</code>  is equal to   <code>/Users/sujith/data</code>     useful for absolute path typing)</p>
+<h3 id="change-directory-cd----cd---change-directory">Change directory <code>cd</code>    [[cd - change directory]]</h3>
+<p><code>cd  &lt;name&gt;</code>    Change directory(changes the shells current working directory)<br>
+(can only move into directories like this, but not out of it with relative paths)
+<code>cd</code>    going to the home directory at once ( <code>home/sujith</code>)
+<code>cd ..</code>    moves back to parent directory
+( <code>..</code> is a special directory meaning &ldquo;the directory containing this one&rdquo; i.e parent directory)
+(<code>.</code> by itself means current directory)
+<code>cd -</code>   the <code>-</code> in front moves to the previous directory we were in , <code>cd -</code> again will bring us back ( it is switching between current and previous directories only )
+( <code>cd /</code>  goes to root directory,  <code>cd ~</code> goes to home directory  )
+( <code>cd ../..</code>  goes up by two level, parent of parent)</p>
+<h3 id="listing-ls--ls---list">Listing <code>ls</code>  [[ls - list]]</h3>
+<p><code>ls</code>         listing to check files and directories in the directory
+flags for <code>ls</code>
+<code>-l</code>      crates a list of things
+<code>-h </code>    does something i couldn&rsquo;t figure
+<code>-a</code>     &lsquo;show all&rsquo; shows hidden directories with <code>.</code> also <code>..</code> directory
+( there will be other directories which start with <code>.</code> like <code>.bash_profile</code>   these contain shell config settings, these are hidden to prevent cluttering )
+<code>-F</code>    gives an output separated with <code>/</code> marker to show what they are,<br>
+(ones with no marker are files)</p>
+<p><code>ls -R</code> to list all nested sub directories within a directories</p>
+<pre><code> all these options/flags can be combined like ls -Fal  -lF  -aF
+</code></pre>
+<h4 id="looking-at-other-directories-contents-without-moving-out">Looking at other directories contents without moving out</h4>
+<p><code>ls ~/Desktop/trial</code>
+<code>ls /User/sujith/Desktop/trial</code>
+<code>ls -F Desktop</code></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/sujith-eag" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sujith.
+        <a href="" target="_blank" rel="noopener"></a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="//localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

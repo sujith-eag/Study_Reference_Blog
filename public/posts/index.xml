@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Learning Journey</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on Learning Journey</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 20 Oct 2024 19:35:53 +0530</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminal - 6 Searching in terminal</title>
+      <link>//localhost:1313/posts/linux-terminal/6searching-files/</link>
+      <pubDate>Sun, 20 Oct 2024 19:35:53 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/6searching-files/</guid>
+      
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Overview&lt;/strong&gt;&lt;/em&gt;
+Use &lt;code&gt;grep&lt;/code&gt; to select lines from text files that match simple patterns.
+Use &lt;code&gt;find&lt;/code&gt; to find files and directories whose names match simple patterns.
+Use the output of one command as the command-line argument to another command.
+Understanding &amp;rsquo;text&amp;rsquo; &amp;amp; &amp;lsquo;binary&amp;rsquo; files, and why many common tools don&amp;rsquo;t handle the latter well.&lt;/p&gt;
+&lt;h2 id=&#34;grep&#34;&gt;&lt;code&gt;grep&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt; is &amp;lsquo;global/regular expression/print&amp;rsquo;.
+A common sequence of operations in Unix text editors.
+[[grep]] finds and prints lines in files that match a pattern.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal - 5 Shell Scripting</title>
+      <link>//localhost:1313/posts/linux-terminal/5shell-scripting/</link>
+      <pubDate>Sun, 20 Oct 2024 19:30:48 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/5shell-scripting/</guid>
+      
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/em&gt;
+Shell script that runs a command or a series of commands for a fixed set of files.
+Run a shell script from the command line.
+Using a shell script that operates on a set of fines defines by the user on the command line.
+Creating a pipeline that included shell scripts.&lt;/p&gt;
+&lt;h2 id=&#34;shell-script&#34;&gt;Shell Script&lt;/h2&gt;
+&lt;p&gt;We are going to take the commands we have repeat frequently and save them in files so that we can re-run all those operations again later by typing a single command.
+So &lt;em&gt;&lt;strong&gt;Shell Scripts&lt;/strong&gt;&lt;/em&gt; are actually small programs.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal - 4 Loops &amp; Scripting</title>
+      <link>//localhost:1313/posts/linux-terminal/4loops-in-command/</link>
+      <pubDate>Sun, 20 Oct 2024 19:20:16 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/4loops-in-command/</guid>
+      
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Objectives&lt;/strong&gt;&lt;/em&gt;
+Writing a loop that applies to one or more commands separately to each file in a set of files.
+Trace the values taken by a loop variable during the execution of the loop.
+Explain the difference between variable&amp;rsquo;s name and its value.
+Explain why spaces and some punctuation characters should&amp;rsquo;t be used in the file name.
+Demonstrate how to see what commands have recently been executed.
+Run recently executed commands without retyping them.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal - 3 Pipes &amp; Filters</title>
+      <link>//localhost:1313/posts/linux-terminal/3pipes-filters/</link>
+      <pubDate>Sun, 20 Oct 2024 18:37:12 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/3pipes-filters/</guid>
+      
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/em&gt;
+Linking commands with pipes and filters
+Combining sequences of commands to get output
+Redirecting commands output to a file&lt;/p&gt;
+&lt;h2 id=&#34;word-count&#34;&gt;Word count&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;wc&lt;/code&gt; gives word count of a file.  [[wc - word count]]
+&lt;code&gt;$ wc cubane.pdb&lt;/code&gt;  gives output &lt;code&gt;(20 156 1158)&lt;/code&gt;  number of lines, words and characters in a file
+&lt;code&gt;$ wc *.pdb&lt;/code&gt;  returns word count of all &lt;code&gt;.pdb&lt;/code&gt; files individually and also total&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;wc -l&lt;/code&gt; shows only the number of lines per file
+&lt;code&gt;wc -m&lt;/code&gt; shows number of characters only
+&lt;code&gt;wc -w&lt;/code&gt; shows number of words only&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal - 2 Working With Files</title>
+      <link>//localhost:1313/posts/linux-terminal/2working-with-files/</link>
+      <pubDate>Sun, 20 Oct 2024 18:35:49 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/2working-with-files/</guid>
+      
+      <description>&lt;h2 id=&#34;creating-directories&#34;&gt;Creating Directories&lt;/h2&gt;
+&lt;p&gt;Open where a directory has to added.
+&lt;code&gt;mkdir [name]&lt;/code&gt;  to &amp;lsquo;make directory&amp;rsquo; in the current directory.
+Using relative path without leading slash&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;  for multiple directories
+&lt;code&gt;mkdir -p&lt;/code&gt; creates a directory with nested sub-directories in a single operation
+&lt;code&gt;mkdir -p ../project/data ../project/results&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ls -R&lt;/code&gt; to list all nested sub directories within a directories&lt;/p&gt;
+&lt;p&gt;To make a directory &lt;code&gt;2016&lt;/code&gt; which has &lt;code&gt;data&lt;/code&gt; and that has 2 directory &lt;code&gt;processed&lt;/code&gt; and &lt;code&gt;raw&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Terminal - 1 Navigating in Directories</title>
+      <link>//localhost:1313/posts/linux-terminal/1navigation/</link>
+      <pubDate>Sun, 20 Oct 2024 18:09:18 +0530</pubDate>
+      
+      <guid>//localhost:1313/posts/linux-terminal/1navigation/</guid>
+      
+      <description>&lt;h2 id=&#34;bash&#34;&gt;Bash&lt;/h2&gt;
+&lt;p&gt;Bash - &lt;code&gt;Bourne Again SHell&lt;/code&gt;    (git Bash - for windows interaction with git )&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Ctrl + Alt + T&lt;/code&gt;    Launch terminal
+&lt;code&gt;Ctrl + Shift + C&lt;/code&gt;    for copying from terminal
+&lt;code&gt;Ctrl + Shift + V&lt;/code&gt;   for pasting in terminal
+&lt;code&gt;clear&lt;/code&gt;      to clear the terminal&lt;/p&gt;
+&lt;p&gt;The grammar of a shell allows to combine existing tools into powerful pipelines and handle large volumes of data automatically.
+Sequence of commands written in a &amp;lsquo;script&amp;rsquo;, improves the reproduciblity of workflows.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

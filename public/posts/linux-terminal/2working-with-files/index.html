@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Terminal - 2 Working With Files | Learning Journey</title>
+<meta property="og:title" content="Terminal - 2 Working With Files | Learning Journey" />
+<meta name="twitter:title" content="Terminal - 2 Working With Files | Learning Journey" />
+<meta itemprop="name" content="Terminal - 2 Working With Files | Learning Journey" />
+<meta name="application-name" content="Terminal - 2 Working With Files | Learning Journey" />
+<meta property="og:site_name" content="Learning Journey" />
+
+<meta name="description" content="Commands and methods used to work with files from terminal">
+<meta itemprop="description" content="Commands and methods used to work with files from terminal" />
+<meta property="og:description" content="Commands and methods used to work with files from terminal" />
+<meta name="twitter:description" content="Commands and methods used to work with files from terminal" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="//localhost:1313/posts/linux-terminal/2working-with-files/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-10-20T18:35:49&#43;0530 />
+    <meta property="article:published_time" content=2024-10-20T18:35:49&#43;0530 />
+    <meta property="og:url" content="//localhost:1313/posts/linux-terminal/2working-with-files/" />
+
+    
+    <meta property="og:article:author" content="Sujith" />
+    <meta property="article:author" content="Sujith" />
+    <meta name="author" content="Sujith" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Terminal - 2 Working With Files",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-10-20",
+        "description": "Commands and methods used to work with files from terminal",
+        "wordCount":  878 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-10-20",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Learning Journey"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.136.2">
+
+    
+    <meta property="og:url" content="//localhost:1313/posts/linux-terminal/2working-with-files/">
+  <meta property="og:site_name" content="Learning Journey">
+  <meta property="og:title" content="Terminal - 2 Working With Files">
+  <meta property="og:description" content="Commands and methods used to work with files from terminal">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-20T18:35:49+05:30">
+    <meta property="article:modified_time" content="2024-10-20T18:35:49+05:30">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Terminal - 2 Working With Files">
+  <meta name="twitter:description" content="Commands and methods used to work with files from terminal">
+
+
+    
+
+    <link rel="canonical" href="//localhost:1313/posts/linux-terminal/2working-with-files/">
+    <link href="/style.min.b446474b7e5d77c595232b5fd48158f6a57c1757ae7f6a8c3417d096cacfa89e.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="//localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="//localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Terminal - 2 Working With Files</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-10-20T18:35:49&#43;05:30" itemprop="datePublished"> 20 Oct 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+        
+            
+        
+    
+    <details class="toc" open>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#creating-directories">Creating Directories</a></li>
+    <li><a href="#naming-conventions">Naming Conventions</a></li>
+    <li><a href="#create-a-text-file">Create a text file</a>
+      <ul>
+        <li><a href="#using-nano-editor">Using nano editor</a></li>
+        <li><a href="#touch-command"><code>touch</code> command</a></li>
+        <li><a href="#rm-removing-a-file-using----rm---remove"><code>rm</code> Removing a file using    [[rm - remove]]</a></li>
+      </ul>
+    </li>
+    <li><a href="#moving-files-and-directories">Moving files and directories</a>
+      <ul>
+        <li><a href="#renaming-by-moving-a-file-to-new-name">Renaming by moving a file to new name!!</a></li>
+      </ul>
+    </li>
+    <li><a href="#copying-files-and-directories">Copying files and directories</a></li>
+    <li><a href="#operation-with-multiple-files-and-directories">Operation with multiple files and directories</a></li>
+    <li><a href="#wild-cards">Wild Cards</a>
+      <ul>
+        <li><a href="#using-wildcards-for-copying">Using wildcards for copying</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="creating-directories">Creating Directories</h2>
+<p>Open where a directory has to added.
+<code>mkdir [name]</code>  to &lsquo;make directory&rsquo; in the current directory.
+Using relative path without leading slash</p>
+<p><code>-p</code>  for multiple directories
+<code>mkdir -p</code> creates a directory with nested sub-directories in a single operation
+<code>mkdir -p ../project/data ../project/results</code></p>
+<p><code>ls -R</code> to list all nested sub directories within a directories</p>
+<p>To make a directory <code>2016</code> which has <code>data</code> and that has 2 directory <code>processed</code> and <code>raw</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"> <span class="cp"># one                              # two
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">mkdir</span> <span class="mi">2016</span>                        <span class="n">mkdir</span> <span class="mi">2016</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="mi">2016</span><span class="o">/</span><span class="n">data</span>                   <span class="n">cd</span> <span class="mi">2016</span> 
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="mi">2016</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">processed</span>         <span class="n">mkdir</span> <span class="n">data</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="mi">2016</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span>               <span class="n">cd</span> <span class="n">data</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span>                                 <span class="n">mkdir</span> <span class="n">raw</span> <span class="n">processed</span>   
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp"># three
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2016</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span>
+</span></span><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2016</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">processed</span>   <span class="err">#</span> <span class="err">`</span><span class="o">-</span><span class="n">p</span><span class="err">`</span> <span class="n">is</span> <span class="n">creating</span> <span class="n">any</span> <span class="n">intermediate</span> <span class="n">directory</span>
+</span></span></code></pre></div><p><code>mkdir north south pacific</code> will create 3 different directories</p>
+<h2 id="naming-conventions">Naming Conventions</h2>
+<ul>
+<li>Don&rsquo;t use spaces as arguments need space separation in command line</li>
+<li>Use <code>_</code> or <code>-</code> instead of space</li>
+<li>Don&rsquo;t start with <code>-</code> as it will be considered as option/flag</li>
+<li>Stick with <code>0-9, a-z . - _</code>  as other symbols have different meaning</li>
+<li>To refer to names with spaces or other special characters, surround the name in single quotes &rsquo; '</li>
+</ul>
+<p><em><strong>Single Quotes</strong></em>
+Enclosing characters in single quotes &rsquo; &rsquo; preserves the literal value of each character within the quotes.</p>
+<p><em><strong>Escape Character</strong></em>
+a non-quoted backslash <code>\</code> is the escape character.
+It preserves the literal value of the next character that follows, with exception of newline.</p>
+<h2 id="create-a-text-file">Create a text file</h2>
+<h3 id="using-nano-editor">Using nano editor</h3>
+<p><code>nano</code> text editor is used to create a <code>txt</code> file
+<code>nano draft.txt</code>   will open nano text editor, data can be typed and then saved(many more options) commands are accessed by holding down <code>Ctr</code></p>
+<p><code>nano</code> can only work with plain character data, no tables or images
+<code>nano</code> can do only this basic operation. Programmers use <code>Emacs</code> or <code>Vim</code>.
+Graphical editors such as <code>Gedit</code> or <code>VScode</code>
+On windows there are <code>Notecode++</code>,  Windows also has <code>notepad</code> that can run like <code>nano</code></p>
+<h3 id="touch-command"><code>touch</code> command</h3>
+<p><code>touch my_file.txt</code> creates a blank text file
+<code>touch  &lt;name.txt&gt;</code>  to make a file  [[touch]]</p>
+<h3 id="rm-removing-a-file-using----rm---remove"><code>rm</code> Removing a file using    [[rm - remove]]</h3>
+<p><code>rm my_file.txt</code>    file gets removed
+<code>rm -i</code>  will ask for confirmation before the deletion
+<code>rm</code> works only on files, not on directories  <code>rm thesis</code>  raises an error
+<code>rm -i thesis/quote.txt</code> will work after confirmation</p>
+<p>We can remove a directory and all its contents by using the recursive <code>-r</code>
+<code>rm -r thesis</code>   <code>rm -r -i</code></p>
+<p><code>rm -i *.txt</code>  removing all <code>.txt</code> file in directory with permission needed for each</p>
+<p>Shell does not have any trash bin so any file deleted is actually deleted</p>
+<h2 id="moving-files-and-directories">Moving files and directories</h2>
+<h3 id="renaming-by-moving-a-file-to-new-name">Renaming by moving a file to new name!!</h3>
+<p><code>mv [old] [new]</code>  moves or renames a file or directory [[mv - move]]</p>
+<p>While in directory behind the directory with file
+<code>$ mv trial/draft.txt  trial/quotes.txt</code>
+The <code>draft.txt</code> file is moved to <code>quotes.txt</code>  which is similar to renaming the file.</p>
+<p>While in the same directory
+<code>$ mv draft.txt quotes.txt</code></p>
+<p>When it is moved to a a directory with same file name, it will delete the previous file silently.
+<code>mv</code> will not ask for confirmation by default.
+An additional option, <code>mv -i</code> <code>mv --interactive</code> will cause <code>mv</code> to request such confirmation.</p>
+<p>File can be moved to directory also
+<code>$ mv trial/quotes.txt</code>  this will move it from that directory to current one.</p>
+<p><code>$ mv sucrose.dat maltase.dat ../raw</code>    moving two files to raw file in the parent directory</p>
+<h2 id="copying-files-and-directories">Copying files and directories</h2>
+<p><code>cp</code> works similar to <code>mv</code>, but copies the file [[cp - copy]]</p>
+<p><code>cp [old] [new]</code> copies a file
+<code>$ cp quotes.txt thesis/quotation.txt</code>
+copies file to another directory with different name</p>
+<p>A directory and all its contents are copied by using recursive option <code>-r</code>  (like backing up directory)
+<code>$ cp -r thesis thesis_backup</code></p>
+<p><code>-r</code> is used to copy the directory, if it is not included, the directory will be omitted</p>
+<h2 id="operation-with-multiple-files-and-directories">Operation with multiple files and directories</h2>
+<p>Copying or moving several files can be done by giving multiple files,</p>
+<p>If given more than one file names followed by a directory name(directory as last argument) <code>cp</code> copies the files to the named directory
+<code>$ mkdir backup</code>
+<code>$ cd cretures/minotaur.dat creatures/unicorn.dat backup/</code></p>
+<p><code>$ cd minotaur.dat unicorn.dat basilisk.dat</code><br>
+all three are file names, makes a error, this can be handled by using wildcards.</p>
+<h2 id="wild-cards">Wild Cards</h2>
+<p>&lsquo;wildcards&rsquo; are special characters that can be used to represent unknown characters or sets of characters when navigating the Unix system.</p>
+<p><code>ethane.pdb   methane.pdb   propane.pdb   pentane.pdb</code>
+<code>*</code> is a wild card which represents 0 or more characters.
+<code>*.pdb</code>  represents every file that ends with <code>.pdb</code>
+<code>*ethane.pdb</code> represents ethane and methane
+<code>p*.pdb</code> represents files that begin with <code>p</code> and has <code>.pdb</code></p>
+<p><code>?</code> is also a wildcard, but represents exactly one character
+<code>?ethane.pdb</code>  represents only <code>methane.pdb</code></p>
+<p>Wild cards can be used in combination with one another
+<code>???ane.pde</code>   is any three characters followed by <code>---ane.pde</code></p>
+<p><code>ls *t*ane.pdb</code>    gives most of names
+<code>ls *t?ne.*</code>          gives octane pentane
+<code>ls *t??ne.pdb</code>    ethane methane
+<code>ls ethane.*</code>       only ethane
+When a shell sees a wildcard it expands the wildcard to create a list of matching filenames before running the preceding command.</p>
+<p><code>*.pdf</code> in directory with <code>*.pdb</code> will throw error</p>
+<h3 id="using-wildcards-for-copying">Using wildcards for copying</h3>
+<p><code>$ cp *dataset* backup/datasets</code>  copy anything having dataset as name to datasets directory inside backups</p>
+<p><code>$ cp *calibration.txt backup/calibration</code>   copying all calibration files</p>
+<p><code>$ cp 2015-11-* send_to_bob/all_november_files/</code>   copying just November files</p>
+<p><code>$ cp *-23-dataset* send_to_bob/all_datasets_created_on_23rd/</code>   just 23rd files</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/sujith-eag" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sujith.
+        <a href="" target="_blank" rel="noopener"></a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="//localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

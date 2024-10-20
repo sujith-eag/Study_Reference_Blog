@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-gb"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Terminal - 3 Pipes &amp; Filters | Learning Journey</title>
+<meta property="og:title" content="Terminal - 3 Pipes &amp; Filters | Learning Journey" />
+<meta name="twitter:title" content="Terminal - 3 Pipes &amp; Filters | Learning Journey" />
+<meta itemprop="name" content="Terminal - 3 Pipes &amp; Filters | Learning Journey" />
+<meta name="application-name" content="Terminal - 3 Pipes &amp; Filters | Learning Journey" />
+<meta property="og:site_name" content="Learning Journey" />
+
+<meta name="description" content="using pipes and filters in handling and moving files">
+<meta itemprop="description" content="using pipes and filters in handling and moving files" />
+<meta property="og:description" content="using pipes and filters in handling and moving files" />
+<meta name="twitter:description" content="using pipes and filters in handling and moving files" />
+
+<meta property="og:locale" content="en-gb" />
+<meta name="language" content="en-gb" />
+
+  <link rel="alternate" hreflang="en-gb" href="//localhost:1313/posts/linux-terminal/3pipes-filters/" title="English" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-10-20T18:37:12&#43;0530 />
+    <meta property="article:published_time" content=2024-10-20T18:37:12&#43;0530 />
+    <meta property="og:url" content="//localhost:1313/posts/linux-terminal/3pipes-filters/" />
+
+    
+    <meta property="og:article:author" content="Sujith" />
+    <meta property="article:author" content="Sujith" />
+    <meta name="author" content="Sujith" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Terminal - 3 Pipes \u0026 Filters",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-10-20",
+        "description": "using pipes and filters in handling and moving files",
+        "wordCount":  724 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-10-20",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Learning Journey"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.136.2">
+
+    
+    <meta property="og:url" content="//localhost:1313/posts/linux-terminal/3pipes-filters/">
+  <meta property="og:site_name" content="Learning Journey">
+  <meta property="og:title" content="Terminal - 3 Pipes & Filters">
+  <meta property="og:description" content="using pipes and filters in handling and moving files">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-20T18:37:12+05:30">
+    <meta property="article:modified_time" content="2024-10-20T18:37:12+05:30">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Terminal - 3 Pipes & Filters">
+  <meta name="twitter:description" content="using pipes and filters in handling and moving files">
+
+
+    
+
+    <link rel="canonical" href="//localhost:1313/posts/linux-terminal/3pipes-filters/">
+    <link href="/style.min.b446474b7e5d77c595232b5fd48158f6a57c1757ae7f6a8c3417d096cacfa89e.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="//localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="//localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        About
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Terminal - 3 Pipes &amp; Filters</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-10-20T18:37:12&#43;05:30" itemprop="datePublished"> 20 Oct 2024 </time>
+                </div>
+                
+            </header>
+            
+    
+        
+            
+        
+    
+    <details class="toc" open>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#word-count">Word count</a></li>
+    <li><a href="#capturing-output-from-commands">Capturing output from commands</a></li>
+    <li><a href="#sort-filtering-output"><code>sort</code> Filtering output</a>
+      <ul>
+        <li><a href="#using-head-to-get-first-few-lines-in-sorted-file">Using <code>head</code> to get first few lines in sorted file</a></li>
+        <li><a href="#using--for-appending-values-in-file">Using <code>&gt;&gt;</code> for appending values in file</a></li>
+      </ul>
+    </li>
+    <li><a href="#pipes-for-passing-output-to-another-command"><code>pipes</code> for passing output to another command</a></li>
+    <li><a href="#filters">Filters</a></li>
+    <li><a href="#pipe-construction">Pipe construction</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p><em><strong>Objective</strong></em>
+Linking commands with pipes and filters
+Combining sequences of commands to get output
+Redirecting commands output to a file</p>
+<h2 id="word-count">Word count</h2>
+<p><code>wc</code> gives word count of a file.  [[wc - word count]]
+<code>$ wc cubane.pdb</code>  gives output <code>(20 156 1158)</code>  number of lines, words and characters in a file
+<code>$ wc *.pdb</code>  returns word count of all <code>.pdb</code> files individually and also total</p>
+<p><code>wc -l</code> shows only the number of lines per file
+<code>wc -m</code> shows number of characters only
+<code>wc -w</code> shows number of words only</p>
+<p><code>$ wc -l</code> which doesn&rsquo;t have any filename, so it assumes the input will come from the command prompt so it will keep waiting for input without doing anything</p>
+<p><code>Ctrl + C</code> can be used to come out of such mistakes</p>
+<h2 id="capturing-output-from-commands">Capturing output from commands</h2>
+<p><code>$ wc -l *.pdb &gt; lengths.txt</code> reads all <code>.pbs</code> lines in directory.<br>
+The <code>&gt;</code> symbol redirect&rsquo;s the command&rsquo;s output to a file called <code>lengths.txt</code>.
+It will create it if doesn&rsquo;t exist or replaces if it does. so caution.</p>
+<p><code>echo</code> command to print strings.</p>
+<p><code>cat</code>  for concatenation.   [[cat - concatenation]]
+Joins together and prints all the contents of the file one after the other.
+<code>$ cat lengths.txt</code></p>
+<p>Disadvantage of <code>cat</code> is it always dumps the whole file onto the screen.
+Using <code>less</code> is more safe approach in practice.
+<code>$ less lengths.pbd</code>    this displays only screen full of the file and stops.
+<code>b</code> and <code>space</code> can be used to go for next page, q for quit</p>
+<h2 id="sort-filtering-output"><code>sort</code> Filtering output</h2>
+<p>Will do alphanumerical sort by default
+<code>sort -n</code>   is for numerical sort
+<code>sort -r</code>   sorts in reverse order
+<code>$ sort -n lengths.txt</code>     this does not change the file, just sends results to screen</p>
+<p>Shifting sorted results to new file
+<code>$ sort -n lengths.txt &gt; sorted-lengths.txt</code></p>
+<h3 id="using-head-to-get-first-few-lines-in-sorted-file">Using <code>head</code> to get first few lines in sorted file</h3>
+<p>By default head and tail create the first 10 lines of its input
+<code>$ head -n 1 sorted-lengths.txt</code>   gives the first line of the file.
+<code>head -n 20</code> would give the first 20 lines.
+<code>tail -n 2</code> gives the last 2 lines.</p>
+<h3 id="using--for-appending-values-in-file">Using <code>&gt;&gt;</code> for appending values in file</h3>
+<p>Redirecting results to the same file is not good, causes errors or deletes the file.
+<code>$ sort -n lengths.txt &gt; lengths.txt</code></p>
+<p><code>&gt;</code>  creates and recreates the same file,
+<code>&gt;&gt;</code> appends the values sequentially again and again like append, so can be run multiple times to enter into a file.
+<code>$ head -n 3 animal.csv &gt; animals-subset.csv</code>   creates the file for first value.
+<code>$ tail -n 2 animals.csv &gt;&gt; animals-subsets.csv</code>  appends the second value.</p>
+<h2 id="pipes-for-passing-output-to-another-command"><code>pipes</code> for passing output to another command</h2>
+<p><code>$ sort -n lengths.txt | head -n 1</code>
+The <code>|</code> vector bar between the two commands is called the <em><strong>pipe</strong></em>.
+It tells the shell that we want to use the output of the command on the left as input to the command on the right.</p>
+<p>Piping removes the need for other files to hold values.</p>
+<p>we can pass <code>wc</code> values directly to <code>sort</code> and then send resulting output to <code>head</code></p>
+<p><code>$ wc -l *.pdb | sort -n | head -n 1</code>    gives the first element which is the shortest.</p>
+<h2 id="filters">Filters</h2>
+<p>A filter is a program like <code>wc</code> and <code>sort</code> that transforms a stream of input into a stream output.
+All standard Unix tools work like this, they read from standard input, do something with what they have read and write to standard output.
+This programming model is called <code>pipes and filters</code></p>
+<h2 id="pipe-construction">Pipe construction</h2>
+<p><code>$ cut -d , -f 2 animals.csv</code>
+<code>cut</code> command is used to <em><strong>remove</strong></em> or <em><strong>cut out</strong></em> certain section of each line in the file.</p>
+<p><code>cut</code> expects the lines to be separated into columns by a <code>tab</code> character, these are called <strong>delimiter</strong>.
+Here <code>-d ,</code> is used as <code>delimiter</code> character.</p>
+<p><code>-f</code> option specifies that we want to extract the second field (column).</p>
+<p><code>$ cut -d , -f 2 animals.csv | sort | uniq</code>
+removing the duplicates using <code>uniq</code></p>
+<p><code>uniq -c</code> option gives the count of the number of times a line occurs in its input.</p>
+<hr>
+<p><code>$ cd nart-pacific-gyre</code>   move into directory.
+<code>$ wc -l *.txt</code>   get the word count of all <code>txt</code> files.</p>
+<p><code>$ wc -l *.txt | sort -n | head -n 5</code>   checking the first five.
+<code>$ wc -l *.txt | sort -n | tail -n 5</code> checking the last five, can be reversed if needed.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/sujith-eag" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://twitter.com" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sujith.
+        <a href="" target="_blank" rel="noopener"></a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+    
+    
+        
+    
+
+    
+    
+        
+    
+
+
+
+    
+    <script async src="//localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>
