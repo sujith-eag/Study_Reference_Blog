@@ -1,6 +1,5 @@
 title = "Learning Journey"
 baseURL = ''
-theme = "hugo-blog-awesome"
 
 # This is what goes in <html lang="">
 languageCode = 'en-us'
